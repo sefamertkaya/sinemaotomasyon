@@ -2,14 +2,15 @@ package sinema;
 
 import java.sql.*;
 
+
 import com.mysql.*;
-import com.mysql.jdbc.ResultSetRow;
+
 public class sqlbaglanti {
 	
 	
 	
 	
-	int filmId=1;
+
 	String isim;
 	String soyisim;
 	String filmadi;
@@ -25,6 +26,7 @@ public class sqlbaglanti {
 	
 	int alSalon;
 	String alSeans;
+	String kontrolSeans;
 	
 	public String filmismi;
 	
@@ -80,9 +82,16 @@ public class sqlbaglanti {
 		this.eklefilm=eklefilm;
 		this.eklesalon=eklesalon;
 		this.ekleseans=ekleseans;
-		sqlbaglantisi2();
-		filmId++;
 		
+	
+		
+		
+	}
+
+	
+	public void calistir() {
+		
+		this.sqlbaglantisi2();
 	}
 	
 	
@@ -111,6 +120,66 @@ public class sqlbaglanti {
 		
 		
 	}
+	
+	void sqlbaglantisi4() {
+		
+		try {
+
+
+	        Class.forName("com.mysql.jdbc.Driver");
+
+
+	        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+
+
+	        String kullaniciad = "root";
+
+
+	        String sifre = "toor";
+
+
+	        Connection con = null; Statement st = null; ResultSet rs = null;
+
+
+	        con = DriverManager.getConnection(url, kullaniciad, sifre);
+
+
+	        
+	        Statement durum=con.createStatement();
+		      System.out.println("Baglandi");
+		      String sorgu="SELECT seans FROM sinema.filmekleme WHERE salon="+eklesalon;
+		      ResultSet sonucSorgu=durum.executeQuery(sorgu);
+			   while(sonucSorgu.next()) {
+			   kontrolSeans=sonucSorgu.getString(1);
+			   
+			   }
+			   sonucSorgu.close(); 
+	        
+}	
+		
+		catch (ClassNotFoundException ex) {
+
+
+		        ex.printStackTrace();        
+
+
+		       System.out.println("Sürücü projeye eklenmemiş!");
+
+
+		    } catch (SQLException ex) {
+
+
+		        ex.printStackTrace();
+
+
+		      System.out.println("Veritabanına bağlantı sağlanamadı!");
+
+		      
+
+		    }
+		
+	}
+	
 	
 	
 	void sqlbaglantisi3() {
@@ -220,7 +289,7 @@ public class sqlbaglanti {
     			String sql2="INSERT INTO filmekleme VALUES (?,?,?,?)";
           
     			PreparedStatement pst=con.prepareStatement(sql2);
-	            pst.setInt(1, filmId);
+	            pst.setString(1, null);
     			pst.setString(2, eklefilm);
     			pst.setInt(3, eklesalon);
     			pst.setString(4, ekleseans);
@@ -293,17 +362,17 @@ public class sqlbaglanti {
 
 	        System.out.println("Baglandi");
 	        try {
-	        			String sql1="INSERT INTO snm VALUES (?,?,?,?,?,?,?)";
+	        			String sql1="INSERT INTO snm VALUES (?,?,?,?,?,?,?,?)";
 	    
 	        			PreparedStatement pst=con.prepareStatement(sql1);
-	    	          
-	        			pst.setString(1, isim);
-	        			pst.setString(2, soyisim);
-	        			pst.setString(3, filmadi);
-	        			pst.setInt(4,salon);
-	        			pst.setString(5, seans);
-	        			pst.setInt(6, ucret);
-	        			pst.setString(7, koltuk);
+	    	            pst.setString(1, null);
+	        			pst.setString(2, isim);
+	        			pst.setString(3, soyisim);
+	        			pst.setString(4, filmadi);
+	        			pst.setInt(5,salon);
+	        			pst.setString(6, seans);
+	        			pst.setInt(7, ucret);
+	        			pst.setString(8, koltuk);
 	        			pst.executeUpdate();
 	        } catch (SQLException e1) {
 			
