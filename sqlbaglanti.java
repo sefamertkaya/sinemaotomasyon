@@ -133,13 +133,13 @@ void sqlbaglantisi4() {
 	        Class.forName("com.mysql.jdbc.Driver");
 
 
-	        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+	        String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
 	        String kullaniciad = "root";
 
 
-	        String sifre = "toor";
+	        String sifre = "";
 
 
 	        Connection con = null; Statement st = null; ResultSet rs = null;
@@ -193,13 +193,13 @@ void sqlbaglantisi3() {
         Class.forName("com.mysql.jdbc.Driver");
 
 
-        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+        String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
         String kullaniciad = "root";
 
 
-        String sifre = "toor";
+        String sifre = "";
 
 
         Connection con = null; Statement st = null; ResultSet rs = null;
@@ -272,13 +272,13 @@ void sqlbaglantisi2() {
         Class.forName("com.mysql.jdbc.Driver");
 
 
-        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+        String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
         String kullaniciad = "root";
 
 
-        String sifre = "toor";
+        String sifre = "";
 
 
         Connection con = null; Statement st = null; ResultSet rs = null;
@@ -351,13 +351,13 @@ void sqlbaglantisi5() {
     Class.forName("com.mysql.jdbc.Driver");
 
 
-    String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+    String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
     String kullaniciad = "root";
 
 
-    String sifre = "toor";
+    String sifre = "";
 
 
     Connection con = null; Statement st = null; ResultSet rs = null;
@@ -412,13 +412,13 @@ void sqlbaglantisi6() {
         Class.forName("com.mysql.jdbc.Driver");
 
 
-        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+        String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
         String kullaniciad = "root";
 
 
-        String sifre = "toor";
+        String sifre = "";
 
 
         Connection con = null; Statement st = null; ResultSet rs = null;
@@ -480,13 +480,13 @@ void sqlbaglantisi() {
         Class.forName("com.mysql.jdbc.Driver");
 
 
-        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+        String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
         String kullaniciad = "root";
 
 
-        String sifre = "toor";
+        String sifre = "";
 
 
         Connection con = null; Statement st = null; ResultSet rs = null;
@@ -572,13 +572,13 @@ void koltukBaglanti() {
         Class.forName("com.mysql.jdbc.Driver");
 
 
-        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+        String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
         String kullaniciad = "root";
 
 
-        String sifre = "toor";
+        String sifre = "";
 
 
         Connection con = null; Statement st = null; ResultSet rs = null;
