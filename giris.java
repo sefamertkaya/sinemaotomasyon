@@ -59,13 +59,13 @@ sqlbaglanti basla=sqlbaglanti.instance();
         Class.forName("com.mysql.jdbc.Driver");
 
 
-        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
+        String url = "jdbc:mysql://127.0.0.1:/sinema";
 
 
         String kullaniciad = "root";
 
 
-        String sifre = "toor";
+        String sifre = "";
 
 
         Connection con = null; Statement st = null; ResultSet rs = null;
