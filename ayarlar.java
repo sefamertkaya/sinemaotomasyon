@@ -1,410 +1,215 @@
+
 package sinema;
 
-import java.sql.*;
+import java.awt.EventQueue;
 
+import javax.swing.JFrame;
+import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.CardLayout;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.UIManager;
+import javax.swing.border.BevelBorder;
+import java.awt.SystemColor;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
+import java.awt.Font;
+import java.awt.Image;
 
-import com.mysql.*;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JRadioButton;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class sqlbaglanti {
-	
-	
-	
-	
-
-	String isim;
-	String soyisim;
+public class ayarlar {
+	sqlbaglanti baslaAy=sqlbaglanti.instance();
+	private JFrame frame;
+	private JTextField txtFilmadigir;
+    
 	String filmadi;
 	int salon;
 	String seans;
-	int ucret;
-	String koltuk;
 	
 	
-	String eklefilm;
-	int eklesalon;
-	String ekleseans;
-	
-	int alSalon;
-	String alSeans;
-	String kontrolSeans;
-	
-	public String filmismi;
-	
-	private static sqlbaglanti instance=null;	
-	
-	private static Object lock=new Object();
-	
-	private sqlbaglanti() {
-		System.out.println("singletion init()");
-		
-	}
-				
-	public static sqlbaglanti instance() {
-		if(instance==null) {
-			
-			synchronized (lock) {
-			if(instance==null)
-				{
-						instance=new sqlbaglanti();
-				
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ayarlar window = new ayarlar();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
 			}
-			
-		}
-		
-		
-		return instance;
-	}
-				
-	
-	public void printThis() {
-		
-		System.out.println(this);
-	}
-				
-	
-	
-	public void setisim (String isim,String soyisim,String filmadi,int salon,String seans,int ucret,String koltuk) {
-		
-		this.isim=isim;
-		this.soyisim=soyisim;
-		this.filmadi=filmadi;
-		this.salon=salon;
-		this.seans=seans;
-		this.ucret=ucret;
-		this.koltuk=koltuk;
-		sqlbaglantisi();
-		
-	}
-	
-	public void setfilm(String eklefilm,int eklesalon,String ekleseans ) {
-		
-		this.eklefilm=eklefilm;
-		this.eklesalon=eklesalon;
-		this.ekleseans=ekleseans;
-		
-	
-		
-		
-	}
-
-	
-	public void calistir() {
-		
-		this.sqlbaglantisi2();
+		});
 	}
 	
 	
-	public void getFilm(int salon,String seans) {
-		
-		
-		
+	public ayarlar() {
+		gorsellik();
 	}
 	
-	
-	
-	
-	
-	
-	
-	public void setfilmismiAl(String filmismiAl) {
-		this.filmismi=filmismiAl;
-			System.out.println(filmismi);
-	}
-	
-	
-	public String filmismiVer() {
-		System.out.println(filmismi);
-		return filmismi;
+
+	private void gorsellik() {
+		frame = new JFrame("Film Ekle");
+			frame.getContentPane().setBackground(new Color(220, 20, 60));
+			frame.setBounds(100, 100, 455, 308);
+			frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			frame.setResizable(false);
 		
-		
-		
-	}
 	
-	void sqlbaglantisi4() {
+		JLabel lblFilmadilbl = new JLabel("F\u0130LM AD\u0130 : ");
+			lblFilmadilbl.setFont(new Font("Arial", Font.BOLD, 14));
 		
-		try {
-
-
-	        Class.forName("com.mysql.jdbc.Driver");
-
-
-	        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
-
-
-	        String kullaniciad = "root";
-
-
-	        String sifre = "toor";
-
-
-	        Connection con = null; Statement st = null; ResultSet rs = null;
-
-
-	        con = DriverManager.getConnection(url, kullaniciad, sifre);
-
-
-	        
-	        Statement durum=con.createStatement();
-		      System.out.println("Baglandi");
-		      String sorgu="SELECT seans FROM sinema.filmekleme WHERE salon="+eklesalon;
-		      ResultSet sonucSorgu=durum.executeQuery(sorgu);
-			   while(sonucSorgu.next()) {
-			   kontrolSeans=sonucSorgu.getString(1);
-			   
-			   }
-			   sonucSorgu.close(); 
-	        
-}	
+		txtFilmadigir = new JTextField();
+			txtFilmadigir.setColumns(10);
+		 
+		JLabel lblSalon = new JLabel("SALON :");
+			lblSalon.setFont(new Font("Arial", Font.BOLD, 14));
 		
-		catch (ClassNotFoundException ex) {
-
-
-		        ex.printStackTrace();        
-
-
-		       System.out.println("Sürücü projeye eklenmemiş!");
-
-
-		    } catch (SQLException ex) {
-
-
-		        ex.printStackTrace();
-
-
-		      System.out.println("Veritabanına bağlantı sağlanamadı!");
-
-		      
-
-		    }
+		JLabel lblSeans = new JLabel("SEANS :");
+			lblSeans.setFont(new Font("Arial", Font.BOLD, 14));
 		
-	}
-	
-	
-	
-	void sqlbaglantisi3() {
-		try {
-
-
-	        Class.forName("com.mysql.jdbc.Driver");
-
-
-	        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
-
-
-	        String kullaniciad = "root";
-
-
-	        String sifre = "toor";
-
-
-	        Connection con = null; Statement st = null; ResultSet rs = null;
-
-
-	        con = DriverManager.getConnection(url, kullaniciad, sifre);
-
-
-	        
-	        Statement stc=con.createStatement();
-            Statement stc2=con.createStatement();
- 
-
-	        System.out.println("Baglandi");
-	        
-		
-		String sorgu1="SELECT salon FROM sinema.filmekleme WHERE filmadi="+"'"+filmismi+"'";
-	    ResultSet sonuc1=stc.executeQuery(sorgu1);
-	   while(sonuc1.next()) {
-	   alSalon=sonuc1.getInt(1);
-	   }
-	   sonuc1.close(); 
-	   String sorgu2="SELECT seans FROM sinema.filmekleme WHERE filmadi="+"'"+filmismi+"'";
-	    
-	    ResultSet sonuc2=stc2.executeQuery(sorgu2);
-
-	    while(sonuc2.next()) {
-		 alSeans=sonuc2.getString(1);
-	    }
-	    sonuc2.close();
-		}	
-		
-		catch (ClassNotFoundException ex) {
-
-
-		        ex.printStackTrace();        
-
-
-		       System.out.println("Sürücü projeye eklenmemiş!");
-
-
-		    } catch (SQLException ex) {
-
-
-		        ex.printStackTrace();
-
-
-		      System.out.println("Veritabanına bağlantı sağlanamadı!");
-
-
-		    }
-
-		
-		
-	}
-	
-	
-	void sqlbaglantisi2() {
-		
-
-		try {
-
-
-	        Class.forName("com.mysql.jdbc.Driver");
-
-
-	        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
-
-
-	        String kullaniciad = "root";
-
-
-	        String sifre = "toor";
-
-
-	        Connection con = null; Statement st = null; ResultSet rs = null;
-
-
-	        con = DriverManager.getConnection(url, kullaniciad, sifre);
-
-
-	        
-	        Statement st1=con.createStatement();
-	        
- 
-
-	        System.out.println("Baglandi");
-	       
-	        try {
-	        	
-    			String sql2="INSERT INTO filmekleme VALUES (?,?,?,?)";
-          
-    			PreparedStatement pst=con.prepareStatement(sql2);
-	            pst.setString(1, null);
-    			pst.setString(2, eklefilm);
-    			pst.setInt(3, eklesalon);
-    			pst.setString(4, ekleseans);
-    			pst.executeUpdate();
-    			
-    			
-    } catch (SQLException e1) {
-	
-		e1.printStackTrace(); 
-	} 	
-	    
-	    	
-	    	
-		}	  catch (ClassNotFoundException ex) {
-
-
-	        ex.printStackTrace();        
-
-
-	       System.out.println("Sürücü projeye eklenmemiş!");
-
-
-	    } catch (SQLException ex) {
-
-
-	        ex.printStackTrace();
-
-
-	      System.out.println("Veritabanına bağlantı sağlanamadı!");
-
-
-	    }
-
+		JButton btnFilmkayit = new JButton("K  A  Y  D  E  T");
+		btnFilmkayit.setFont(new Font("Arial", Font.BOLD, 14));
 	 
+		 
+		JComboBox comboBox = new JComboBox();
+		  	comboBox.addItem("1");
+		  	comboBox.addItem("2");
+		  	comboBox.addItem("3");
+		  	comboBox.addItem("4");
+		  	comboBox.addItem("5");
+		  	comboBox.addItem("6");
+		  	comboBox.addItem("7");
+		  	comboBox.addItem("8");
 		
-	}
+		
+		JComboBox comboBox_1 = new JComboBox();
 	
-	
-	
-	
-	
-	
-	void sqlbaglantisi() {
-	
-		try {
-
-
-	        Class.forName("com.mysql.jdbc.Driver");
-
-
-	        String url = "jdbc:mysql://127.0.0.1:3306/sinema";
-
-
-	        String kullaniciad = "root";
-
-
-	        String sifre = "toor";
-
-
-	        Connection con = null; Statement st = null; ResultSet rs = null;
-
-
-	        con = DriverManager.getConnection(url, kullaniciad, sifre);
-
-
-	        
-	        Statement st1=con.createStatement();
-	        Statement st2=con.createStatement();
- 
-
-	        System.out.println("Baglandi");
-	        try {
-	        			String sql1="INSERT INTO snm VALUES (?,?,?,?,?,?,?,?)";
-	    
-	        			PreparedStatement pst=con.prepareStatement(sql1);
-	    	            pst.setString(1, null);
-	        			pst.setString(2, isim);
-	        			pst.setString(3, soyisim);
-	        			pst.setString(4, filmadi);
-	        			pst.setInt(5,salon);
-	        			pst.setString(6, seans);
-	        			pst.setInt(7, ucret);
-	        			pst.setString(8, koltuk);
-	        			pst.executeUpdate();
-	        } catch (SQLException e1) {
+			comboBox_1.addItem("09:30");
+			comboBox_1.addItem("11:30");
+			comboBox_1.addItem("13:30");
+			comboBox_1.addItem("15:30");
+			comboBox_1.addItem("17:30");
+			comboBox_1.addItem("19:30");
+			comboBox_1.addItem("21:30");
+			comboBox_1.addItem("23:30");
 			
-				e1.printStackTrace(); 
-			} 
-	        			
-	    
-	    	
-	    	
-		}	  catch (ClassNotFoundException ex) {
+		
+			btnFilmkayit.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					 
+				 
+					String filmAl=txtFilmadigir.getText(); 
+					filmAl=filmAl.toUpperCase(); 
+					int salon=Integer.parseInt((String) comboBox.getSelectedItem());
+					String seans=(String) comboBox_1.getSelectedItem();
+					
+					baslaAy.setfilm(filmAl, salon, seans);
+					
+					System.out.println("buton if e girmeden buraya girdi.");
+					
+					if(filmAl.length()<2) {
+						JOptionPane.showMessageDialog(null, "FİLM ADI BOŞ OLAMAZ!","HATA!",JOptionPane.WARNING_MESSAGE);
+					
+					}else {
+				
+                      System.out.println("birinci if ilk satir");
 
-
-	        ex.printStackTrace();        
-
-
-	       System.out.println("Sürücü projeye eklenmemiş!");
-
-
-	    } catch (SQLException ex) {
-
-
-	        ex.printStackTrace();
-
-
-	      System.out.println("Veritabanına bağlantı sağlanamadı!");
-
-
-	    }
-
-	 
-}
-	
-	
-	
+					baslaAy.sqlbaglantisi4();
+					
+					System.out.println("birinci if ikinci satir");
+					
+					System.out.println(baslaAy.kontrolSeans);  
+					
+						
+				             System.out.println("ikinci if ilk satir");
+							
+							baslaAy.sqlbaglantisi2(); 
+							baslaAy.sqlbaglantisi5();
+							baslaAy.sqlbaglantisi6();
+						
+							 System.out.println("ikinci if ikinci satir");
+							
+							txtFilmadigir.setText("");		
+						
+					}
+					
+					
+				}
+			}); 
+		
+			
+			
+			
+			
+		JLabel lblResimlbl = new JLabel("");
+		
+		Image imgG=new ImageIcon(this.getClass().getResource("/tiyatro.png")).getImage();
+		lblResimlbl.setIcon(new ImageIcon(imgG));
+		
+		
+		
+		
+		//GEREKSİZLER
+		
+		
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(44)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblFilmadilbl, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblSalon, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblSeans, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+					.addGap(9)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtFilmadigir, GroupLayout.PREFERRED_SIZE, 264, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnFilmkayit, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(comboBox_1, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+								.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE))
+							.addGap(26)
+							.addComponent(lblResimlbl, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(27, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(41)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblFilmadilbl, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtFilmadigir, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(29)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblSalon, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+								.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+							.addGap(27)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblSeans, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+								.addComponent(comboBox_1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(18)
+							.addComponent(lblResimlbl, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnFilmkayit, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(30))
+		);
+		frame.getContentPane().setLayout(groupLayout);
+	}
 }
