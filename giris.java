@@ -29,14 +29,14 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
 import java.awt.SystemColor;
-
+import java.awt.Toolkit;
+import java.lang.Exception;
 public class giris  { 
  
 	private JFrame frame;
 
 
-	        
-	
+
 sqlbaglanti basla=sqlbaglanti.instance();
 	
 	public static  void main(String[] args) {
@@ -76,6 +76,7 @@ sqlbaglanti basla=sqlbaglanti.instance();
 
         
         Statement adam=con.createStatement();
+      
         try {
             for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -103,8 +104,8 @@ sqlbaglanti basla=sqlbaglanti.instance();
 		comboBox.setFont(new Font("Arial", Font.BOLD, 12));
 		JLabel lblResim = new JLabel("");
 		Image img=new ImageIcon(this.getClass().getResource("/Cinema-icon.png")).getImage();
-		lblResim.setIcon(new ImageIcon(img));
-		 
+		lblResim.setIcon(new ImageIcon(img)); 
+		 	
 		JButton btnBiletal = new JButton("B  \u0130  L  E  T    A  L");
 		btnBiletal.setFont(new Font("Arial", Font.BOLD, 16));
 		btnBiletal.setBackground(new Color(0, 255, 0));
@@ -112,12 +113,14 @@ sqlbaglanti basla=sqlbaglanti.instance();
 		
 		btnBiletal.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						
-						
-						
+						 
+						 
+							
 						String biletAl=(String)comboBox.getSelectedItem();
 						basla.setfilmismiAl(biletAl);
 						basla.sqlbaglantisi3();
+						basla.koltukBaglanti();
+					
 						
 					    sinemasalonu startt=new sinemasalonu();
 					
@@ -151,10 +154,12 @@ sqlbaglanti basla=sqlbaglanti.instance();
 			
 			}
 		});
+		
+		
 		btnFilmKaldir.setBackground(new Color(255, 0, 0));
 		btnFilmKaldir.setFont(new Font("Arial", Font.BOLD, 12));
-		
-		
+			
+			
 		Image imgRr=new ImageIcon(this.getClass().getResource("/reload-2-icon.png")).getImage();
 		JButton btnRefresh = new JButton(new ImageIcon("/reload-2-icon.png"));
 		btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/reload-2-icon.png")));
@@ -165,8 +170,8 @@ sqlbaglanti basla=sqlbaglanti.instance();
 				
 
 				 
-				String sorgu="SELECT filmadi FROM sinema.filmekleme";
-				ResultSet sonuc2 = null;
+				String sorgu="SELECT filmadi FROM sinema.film";
+				ResultSet sonuc2 = null; 
 				try {
 					sonuc2 = adam.executeQuery(sorgu); 
 				} catch (SQLException e) {
@@ -245,7 +250,7 @@ sqlbaglanti basla=sqlbaglanti.instance();
 		
 	
 		
-		String sorgu="SELECT filmadi FROM sinema.filmekleme";
+		String sorgu="SELECT filmadi FROM sinema.film";
 		ResultSet sonuc = adam.executeQuery(sorgu);
 		
 		while(sonuc.next()) {
