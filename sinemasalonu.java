@@ -29,8 +29,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JToggleButton;
+import java.lang.String;
+import java.util.*;
 
-public class sinemasalonu   {
+public class sinemasalonu {
     
 	private JFrame frame;
 	private JTextField txtIsimgir;
@@ -43,11 +45,11 @@ public class sinemasalonu   {
 	String soyad;
 	int fiyat;
 	int salon;
-	String seans;
+	String seans; 
 	String koltuk;
-
+    String [] otur; 
 	
-	
+	 
 	
 	public sinemasalonu() {
 		
@@ -236,643 +238,903 @@ public class sinemasalonu   {
 			
 		});
 		
-		JToggleButton toggleButton_7 = new JToggleButton("2");
-		toggleButton_7.setBackground(Color.WHITE);
-		toggleButton_7.addItemListener(new ItemListener() {
+		JToggleButton B1 = new JToggleButton("1");
+		B1.setBackground(Color.WHITE);
+		B1.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {				
+				
+				if(B1.isSelected()) {
+					B1.setBackground(Color.orange);
+					koltuk="B1";
+					System.out.println(koltuk);
+				}else {
+					B1.setBackground(Color.WHITE);
+				     
+				}
+			}
+		});
+		
+		
+		JToggleButton B2 = new JToggleButton("2");
+		B2.setBackground(Color.WHITE);
+		B2.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(B2.isSelected()) {
+					B2.setBackground(Color.orange);
+					koltuk="B2";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					B2.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_8 = new JToggleButton("3");
-		toggleButton_8.setBackground(Color.WHITE);
-		toggleButton_8.addItemListener(new ItemListener() {
+		JToggleButton B3 = new JToggleButton("3");
+		B3.setBackground(Color.WHITE);
+		B3.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(B3.isSelected()) {
+					B3.setBackground(Color.orange);
+					koltuk="B3";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					B3.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_9 = new JToggleButton("4");
-		toggleButton_9.setBackground(Color.WHITE);
-		toggleButton_9.addItemListener(new ItemListener() {
+		JToggleButton B4 = new JToggleButton("4");
+		B4.setBackground(Color.WHITE);
+		B4.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
 				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(B4.isSelected()) {
+					B4.setBackground(Color.orange);
+					koltuk="B4";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					B4.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_10 = new JToggleButton("5");
-		toggleButton_10.setBackground(Color.WHITE);
-		toggleButton_10.addItemListener(new ItemListener() {
+		JToggleButton B5 = new JToggleButton("5");
+		B5.setBackground(Color.WHITE);
+		B5.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(B5.isSelected()) {
+					B5.setBackground(Color.orange);
+					koltuk="B5";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					B5.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_11 = new JToggleButton("6");
-		toggleButton_11.setBackground(Color.WHITE);
-		toggleButton_11.addItemListener(new ItemListener() {
+		JToggleButton B6 = new JToggleButton("6");
+		B6.setBackground(Color.WHITE);
+		B6.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(B6.isSelected()) {
+					B6.setBackground(Color.orange);
+					koltuk="B6";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					B6.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_12 = new JToggleButton("7");
-		toggleButton_12.setBackground(Color.WHITE);
-		toggleButton_12.addItemListener(new ItemListener() {
+		JToggleButton B7 = new JToggleButton("7");
+		B7.setBackground(Color.WHITE);
+		B7.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(B7.isSelected()) {
+					B7.setBackground(Color.orange);
+					koltuk="B7";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					B7.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_13 = new JToggleButton("8");
-		toggleButton_13.setBackground(Color.WHITE);
-		toggleButton_13.addItemListener(new ItemListener() {
+		JToggleButton B8 = new JToggleButton("8");
+		B8.setBackground(Color.WHITE);
+		B8.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(B8.isSelected()) {
+					B8.setBackground(Color.orange);
+					koltuk="B8";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					B8.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_14 = new JToggleButton("1");
-		toggleButton_14.setBackground(Color.WHITE);
-		toggleButton_14.addItemListener(new ItemListener() {
+		JToggleButton C1 = new JToggleButton("1");
+		C1.setBackground(Color.WHITE);
+		C1.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C1.isSelected()) {
+					C1.setBackground(Color.orange);
+					koltuk="C1";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C1.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_15 = new JToggleButton("2");
-		toggleButton_15.setBackground(Color.WHITE);
-		toggleButton_15.addItemListener(new ItemListener() {
+		
+		JToggleButton C2 = new JToggleButton("2");
+		C2.setBackground(Color.WHITE);
+		C2.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C2.isSelected()) {
+					C2.setBackground(Color.orange);
+					koltuk="C2";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C2.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_16 = new JToggleButton("3");
-		toggleButton_16.setBackground(Color.WHITE);
-		toggleButton_16.addItemListener(new ItemListener() {
+		JToggleButton C3 = new JToggleButton("3");
+		C3.setBackground(Color.WHITE);
+		C3.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C3.isSelected()) {
+					C3.setBackground(Color.orange);
+					koltuk="C3";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C3.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_17 = new JToggleButton("4");
-		toggleButton_17.setBackground(Color.WHITE);
-		toggleButton_17.addItemListener(new ItemListener() {
+		JToggleButton C4 = new JToggleButton("4");
+		C4.setBackground(Color.WHITE);
+		C4.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C4.isSelected()) {
+					C4.setBackground(Color.orange);
+					koltuk="C4";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C4.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_18 = new JToggleButton("5");
-		toggleButton_18.setBackground(Color.WHITE);
-		toggleButton_18.addItemListener(new ItemListener() {
+		JToggleButton C5 = new JToggleButton("5");
+		C5.setBackground(Color.WHITE);
+		C5.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C5.isSelected()) {
+					C5.setBackground(Color.orange);
+					koltuk="C5";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C5.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_19 = new JToggleButton("6");
-		toggleButton_19.setBackground(Color.WHITE);
-		toggleButton_19.addItemListener(new ItemListener() {
+		JToggleButton C6 = new JToggleButton("6");
+		C6.setBackground(Color.WHITE);
+		C6.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C6.isSelected()) {
+					C6.setBackground(Color.orange);
+					koltuk="C6";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C6.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_20 = new JToggleButton("7");
-		toggleButton_20.setBackground(Color.WHITE);
-		toggleButton_20.addItemListener(new ItemListener() {
+		JToggleButton C7 = new JToggleButton("7");
+		C7.setBackground(Color.WHITE);
+		C7.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C7.isSelected()) {
+					C7.setBackground(Color.orange);
+					koltuk="C7";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C7.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_21 = new JToggleButton("8");
-		toggleButton_21.setBackground(Color.WHITE);
-		toggleButton_21.addItemListener(new ItemListener() {
+		JToggleButton C8 = new JToggleButton("8");
+		C8.setBackground(Color.WHITE);
+		C8.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(C8.isSelected()) {
+					C8.setBackground(Color.orange);
+					koltuk="C8";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					C8.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_22 = new JToggleButton("1");
-		toggleButton_22.setBackground(Color.WHITE);
-		toggleButton_22.addItemListener(new ItemListener() {
+		JToggleButton D1 = new JToggleButton("1");
+		D1.setBackground(Color.WHITE);
+		D1.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D1.isSelected()) {
+					D1.setBackground(Color.orange);
+					koltuk="D1";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D1.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_23 = new JToggleButton("2");
-		toggleButton_23.setBackground(Color.WHITE);
-		toggleButton_23.addItemListener(new ItemListener() {
+	
+		JToggleButton D2 = new JToggleButton("2");
+		D2.setBackground(Color.WHITE);
+		D2.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D2.isSelected()) {
+					D2.setBackground(Color.orange);
+					koltuk="D2";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D2.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_24 = new JToggleButton("3");
-		toggleButton_24.setBackground(Color.WHITE);
-		toggleButton_24.addItemListener(new ItemListener() {
+		JToggleButton D3 = new JToggleButton("3");
+		D3.setBackground(Color.WHITE);
+		D3.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D3.isSelected()) {
+					D3.setBackground(Color.orange);
+					koltuk="D3";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D3.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_25 = new JToggleButton("4");
-		toggleButton_25.setBackground(Color.WHITE);
-		toggleButton_25.addItemListener(new ItemListener() {
+		JToggleButton D4 = new JToggleButton("4");
+		D4.setBackground(Color.WHITE);
+		D4.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D4.isSelected()) {
+					D4.setBackground(Color.orange);
+					koltuk="D4";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D4.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_26 = new JToggleButton("5");
-		toggleButton_26.setBackground(Color.WHITE);
-		toggleButton_26.addItemListener(new ItemListener() {
+		JToggleButton D5 = new JToggleButton("5");
+		D5.setBackground(Color.WHITE);
+		D5.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D5.isSelected()) {
+					D5.setBackground(Color.orange);
+					koltuk="D5";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D5.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_27 = new JToggleButton("6");
-		toggleButton_27.setBackground(Color.WHITE);
-		toggleButton_27.addItemListener(new ItemListener() {
+		JToggleButton D6 = new JToggleButton("6");
+		D6.setBackground(Color.WHITE);
+		D6.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D6.isSelected()) {
+					D6.setBackground(Color.orange);
+					koltuk="D6";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D6.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_28 = new JToggleButton("7");
-		toggleButton_28.setBackground(Color.WHITE);
-		toggleButton_28.addItemListener(new ItemListener() {
+		JToggleButton D7 = new JToggleButton("7");
+		D7.setBackground(Color.WHITE);
+		D7.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D7.isSelected()) {
+					D7.setBackground(Color.orange);
+					koltuk="D7";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D7.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_29 = new JToggleButton("8");
-		toggleButton_29.setBackground(Color.WHITE);
-		toggleButton_29.addItemListener(new ItemListener() {
+		JToggleButton D8 = new JToggleButton("8");
+		D8.setBackground(Color.WHITE);
+		D8.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(D8.isSelected()) {
+					D8.setBackground(Color.orange);
+					koltuk="D8";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					D8.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_30 = new JToggleButton("1");
-		toggleButton_30.setBackground(Color.WHITE);
-		toggleButton_30.addItemListener(new ItemListener() {
+		JToggleButton E1 = new JToggleButton("1");
+		E1.setBackground(Color.WHITE);
+		E1.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E1.isSelected()) {
+					E1.setBackground(Color.orange);
+					koltuk="E1";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E1.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_31 = new JToggleButton("2");
-		toggleButton_31.setBackground(Color.WHITE);
-		toggleButton_31.addItemListener(new ItemListener() {
+		JToggleButton E2 = new JToggleButton("2");
+		E2.setBackground(Color.WHITE);
+		E2.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E2.isSelected()) {
+					E2.setBackground(Color.orange);
+					koltuk="E2";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E2.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_32 = new JToggleButton("3");
-		toggleButton_32.setBackground(Color.WHITE);
-		toggleButton_32.addItemListener(new ItemListener() {
+		JToggleButton E3 = new JToggleButton("3");
+		E3.setBackground(Color.WHITE);
+		E3.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E3.isSelected()) {
+					E3.setBackground(Color.orange);
+					koltuk="E3";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E3.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_33 = new JToggleButton("4");
-		toggleButton_33.setBackground(Color.WHITE);
-		toggleButton_33.addItemListener(new ItemListener() {
+		JToggleButton E4 = new JToggleButton("4");
+		E4.setBackground(Color.WHITE);
+		E4.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E4.isSelected()) {
+					E4.setBackground(Color.orange);
+					koltuk="E4";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E4.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_34 = new JToggleButton("5");
-		toggleButton_34.setBackground(Color.WHITE);
-		toggleButton_34.addItemListener(new ItemListener() {
+		JToggleButton E5 = new JToggleButton("5");
+		E5.setBackground(Color.WHITE);
+		E5.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E5.isSelected()) {
+					E5.setBackground(Color.orange);
+					koltuk="E5";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E5.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_35 = new JToggleButton("6");
-		toggleButton_35.setBackground(Color.WHITE);
-		toggleButton_35.addItemListener(new ItemListener() {
+		JToggleButton E6 = new JToggleButton("6");
+		E6.setBackground(Color.WHITE);
+		E6.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E6.isSelected()) {
+					E6.setBackground(Color.orange);
+					koltuk="E6";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E6.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_36 = new JToggleButton("7");
-		toggleButton_36.setBackground(Color.WHITE);
-		toggleButton_36.addItemListener(new ItemListener() {
+		JToggleButton E7 = new JToggleButton("7");
+		E7.setBackground(Color.WHITE);
+		E7.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E7.isSelected()) {
+					E7.setBackground(Color.orange);
+					koltuk="E7";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E7.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_37 = new JToggleButton("8");
-		toggleButton_37.setBackground(Color.WHITE);
-		toggleButton_37.addItemListener(new ItemListener() {
+		JToggleButton E8 = new JToggleButton("8");
+		E8.setBackground(Color.WHITE);
+		E8.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(E8.isSelected()) {
+					E8.setBackground(Color.orange);
+					koltuk="E8";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					E8.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_38 = new JToggleButton("1");
-		toggleButton_38.setBackground(Color.WHITE);
-		toggleButton_38.addItemListener(new ItemListener() {
+		JToggleButton F1 = new JToggleButton("1");
+		F1.setBackground(Color.WHITE);
+		F1.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(F1.isSelected()) {
+					F1.setBackground(Color.orange);
+					koltuk="F1";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					F1.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_39 = new JToggleButton("2");
-		toggleButton_39.setBackground(Color.WHITE);
-		toggleButton_39.addItemListener(new ItemListener() {
+		
+		JToggleButton F2 = new JToggleButton("2");
+		F2.setBackground(Color.WHITE);
+		F2.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(F2.isSelected()) {
+					F2.setBackground(Color.orange);
+					koltuk="F2";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					F2.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_40 = new JToggleButton("3");
-		toggleButton_40.setBackground(Color.WHITE);
-		toggleButton_40.addItemListener(new ItemListener() {
+		JToggleButton F3 = new JToggleButton("3");
+		F3.setBackground(Color.WHITE);
+		F3.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(F3.isSelected()) {
+					F3.setBackground(Color.orange);
+					koltuk="F3";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					F3.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_41 = new JToggleButton("4");
-		toggleButton_41.setBackground(Color.WHITE);
-		toggleButton_41.addItemListener(new ItemListener() {
+		JToggleButton F4 = new JToggleButton("4");
+		F4.setBackground(Color.WHITE);
+		F4.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(F4.isSelected()) {
+					F4.setBackground(Color.orange);
+					koltuk="F4";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					F4.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_42 = new JToggleButton("5");
-		toggleButton_42.setBackground(Color.WHITE);
-		toggleButton_42.addItemListener(new ItemListener() {
+		JToggleButton F5 = new JToggleButton("5");
+		F5.setBackground(Color.WHITE);
+		F5.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(F5.isSelected()) {
+					F5.setBackground(Color.orange);
+					koltuk="F5";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					F5.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_43 = new JToggleButton("6");
-		toggleButton_43.setBackground(Color.WHITE);
-		toggleButton_43.addItemListener(new ItemListener() {
+		JToggleButton F6 = new JToggleButton("6");
+		F6.setBackground(Color.WHITE);
+		F6.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(F6.isSelected()) {
+					F6.setBackground(Color.orange);
+					koltuk="F6";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					F6.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_44 = new JToggleButton("7");
-		toggleButton_44.setBackground(Color.WHITE);
-		toggleButton_44.addItemListener(new ItemListener() {
+		JToggleButton F7 = new JToggleButton("7");
+		F7.setBackground(Color.WHITE);
+		F7.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+				if(F7.isSelected()) {
+					F7.setBackground(Color.orange);
+					koltuk="F7";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
+					F7.setBackground(Color.WHITE);
 				     
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_45 = new JToggleButton("8");
-		toggleButton_45.setBackground(Color.WHITE);
-		toggleButton_45.addItemListener(new ItemListener() {
+		
+		
+		JToggleButton F8 = new JToggleButton("8");
+		F8.setBackground(Color.WHITE);
+		F8.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {				
 				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
+					
+				
+				if(F8.isSelected()) {
+					F8.setBackground(Color.orange);
+					koltuk="F8";
 					System.out.println(koltuk);
 				}else {
-					A8.setBackground(Color.WHITE);
-				     
+					F8.setBackground(Color.WHITE);
+				      
 				}
 			}
 		});
 		
-		JToggleButton toggleButton_46 = new JToggleButton("1");
-		toggleButton_46.setBackground(Color.WHITE);
-		toggleButton_46.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent arg0) {				
-				
-				if(A8.isSelected()) {
-					A8.setBackground(Color.orange);
-					koltuk="A8";
-					System.out.println(koltuk);
-				}else {
-					A8.setBackground(Color.WHITE);
-				     
-				}
-			}
-		});
+
+for(int i=0;i<baslaSin.oturak.length;i++) {
+	
+	  
+	if("A1".equals(baslaSin.oturak[i])==true) {
+		A1.setEnabled(false);
+		
+	}
+	
+	if("A2".equals(baslaSin.oturak[i])==true) {
+		A2.setEnabled(false);
+		
+	}
+	
+	if("A3".equals(baslaSin.oturak[i])==true) {
+		A3.setEnabled(false);
+		
+	}
+	
+	if("A4".equals(baslaSin.oturak[i])==true) {
+		A4.setEnabled(false);
+		
+	}
+	
+	if("A5".equals(baslaSin.oturak[i])==true) {
+		A5.setEnabled(false);
+		
+	}
+	
+	if("A6".equals(baslaSin.oturak[i])==true) {
+		A6.setEnabled(false);
+		
+	}
+	
+	if("A7".equals(baslaSin.oturak[i])==true) {
+		A7.setEnabled(false);
+		
+	}
+	
+	if("A8".equals(baslaSin.oturak[i])==true) {
+		A8.setEnabled(false);
+		
+	}
+	
+	if("B1".equals(baslaSin.oturak[i])==true) {
+		B1.setEnabled(false);
+		
+	}
+	
+	if("B2".equals(baslaSin.oturak[i])==true) {
+		B2.setEnabled(false);
+		
+	}
+	
+	if("B3".equals(baslaSin.oturak[i])==true) {
+		B3.setEnabled(false);
+		
+	}
+	
+	if("B4".equals(baslaSin.oturak[i])==true) {
+		B4.setEnabled(false);
+		
+	}
+	
+	if("B5".equals(baslaSin.oturak[i])==true) {
+		B5.setEnabled(false);
+		
+	}
+	
+	if("B6".equals(baslaSin.oturak[i])==true) {
+		B6.setEnabled(false);
+		
+	}
+	
+	if("B7".equals(baslaSin.oturak[i])==true) {
+		B7.setEnabled(false);
+		
+	}
+	
+	if("B8".equals(baslaSin.oturak[i])==true) {
+		B8.setEnabled(false);
+		
+	}
+	
+	if("C1".equals(baslaSin.oturak[i])==true) {
+		C1.setEnabled(false);
+		
+	}
+	
+	if("C2".equals(baslaSin.oturak[i])==true) {
+		C2.setEnabled(false);
+		
+	}
+	
+	if("C3".equals(baslaSin.oturak[i])==true) {
+		C3.setEnabled(false);
+		
+	}
+	
+	if("C4".equals(baslaSin.oturak[i])==true) {
+		C4.setEnabled(false);
+		
+	}
+	
+	if("C5".equals(baslaSin.oturak[i])==true) {
+		C5.setEnabled(false);
+		
+	}
+	
+	if("C6".equals(baslaSin.oturak[i])==true) {
+		C6.setEnabled(false);
+		
+	}
+	
+	if("C7".equals(baslaSin.oturak[i])==true) {
+		C7.setEnabled(false);
+		
+	}
+	
+	if("C8".equals(baslaSin.oturak[i])==true) {
+		C8.setEnabled(false);
+		
+	}
+	
+	if("D1".equals(baslaSin.oturak[i])==true) {
+		D1.setEnabled(false);
+		
+	}
+	
+	if("D2".equals(baslaSin.oturak[i])==true) {
+		D2.setEnabled(false);
+		
+	}
+	
+	if("D3".equals(baslaSin.oturak[i])==true) {
+		D3.setEnabled(false);
+		
+	}
+	
+	if("D4".equals(baslaSin.oturak[i])==true) {
+		D4.setEnabled(false);
+		
+	}
+	
+	if("D5".equals(baslaSin.oturak[i])==true) {
+		D5.setEnabled(false);
+		
+	}
+	
+	if("D6".equals(baslaSin.oturak[i])==true) {
+		D6.setEnabled(false);
+		
+	}
+	
+	if("D7".equals(baslaSin.oturak[i])==true) {
+		D7.setEnabled(false);
+		
+	}
+	
+	if("D8".equals(baslaSin.oturak[i])==true) {
+		D8.setEnabled(false);
+		
+	}
+	
+	if("E1".equals(baslaSin.oturak[i])==true) {
+		E1.setEnabled(false);
+		
+	}
+	
+	if("E2".equals(baslaSin.oturak[i])==true) {
+		E2.setEnabled(false);
+		
+	}
+	
+	if("E3".equals(baslaSin.oturak[i])==true) {
+		E3.setEnabled(false);
+		
+	}
+	
+	if("E4".equals(baslaSin.oturak[i])==true) {
+		E4.setEnabled(false);
+		
+	}
+	
+	if("E5".equals(baslaSin.oturak[i])==true) {
+		E5.setEnabled(false);
+		
+	}
+	
+	if("E6".equals(baslaSin.oturak[i])==true) {
+		E6.setEnabled(false);
+		
+	}
+	
+	if("E7".equals(baslaSin.oturak[i])==true) {
+		E7.setEnabled(false);
+		
+	}
+	
+	if("E8".equals(baslaSin.oturak[i])==true) {
+		E8.setEnabled(false);
+		
+	}
+	
+	if("F1".equals(baslaSin.oturak[i])==true) {
+		F1.setEnabled(false);
+		
+	}
+	
+	if("F2".equals(baslaSin.oturak[i])==true) {
+		F2.setEnabled(false);
+		
+	}
+	
+	if("F3".equals(baslaSin.oturak[i])==true) {
+		F3.setEnabled(false);
+		
+	}
+	
+	if("F4".equals(baslaSin.oturak[i])==true) {
+		F4.setEnabled(false);
+		
+	}
+	
+	if("F5".equals(baslaSin.oturak[i])==true) {
+		F5.setEnabled(false);
+	
+	}
+	
+	if("F6".equals(baslaSin.oturak[i])==true) {
+		F6.setEnabled(false);
+		
+	}
+	
+	if("F7".equals(baslaSin.oturak[i])==true) {
+		F7.setEnabled(false);
+		
+	}
+	
+	if("F8".equals(baslaSin.oturak[i])==true) {
+		F8.setEnabled(false);
+		
+	}
+	
+	
+	
+	
+	
+	
+}
+		
 		
 		JPanel panel = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
@@ -902,93 +1164,93 @@ public class sinemasalonu   {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblB, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(toggleButton_14, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(B1, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_7, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(B2, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_8, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(B3, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_9, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(B4, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_10, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(B5, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_11, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(B6, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_12, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(B7, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_13, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
+							.addComponent(B8, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblC, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(toggleButton_22, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(C1, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_15, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(C2, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_16, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(C3, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_17, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(C4, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_18, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(C5, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_19, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(C6, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_20, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(C7, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_21, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
+							.addComponent(C8, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblD, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(toggleButton_30, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(D1, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_23, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(D2, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_24, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(D3, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_25, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(D4, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_26, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(D5, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_27, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(D6, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_28, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(D7, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_29, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
+							.addComponent(D8, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblE, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(toggleButton_38, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(E1, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_31, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(E2, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_32, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(E3, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_33, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(E4, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_34, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(E5, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_35, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(E6, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_36, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(E7, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_37, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
+							.addComponent(E8, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblF, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(toggleButton_46, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(F1, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_39, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(F2, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_40, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(F3, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_41, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(F4, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_42, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(F5, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_43, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(F6, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_44, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addComponent(F7, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
 							.addGap(6)
-							.addComponent(toggleButton_45, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
+							.addComponent(F8, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
 						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 463, GroupLayout.PREFERRED_SIZE))
 					.addGap(74)
 					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
@@ -1013,59 +1275,59 @@ public class sinemasalonu   {
 							.addGap(30)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblB, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_14, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_8, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_9, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_10, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_11, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_12, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_13, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
+								.addComponent(B1, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(B2, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(B3, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(B4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(B5, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(B6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(B7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(B8, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
 							.addGap(31)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblC, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_22, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_15, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_16, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_17, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_18, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_19, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_20, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_21, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
+								.addComponent(C1, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(C2, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(C3, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(C4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(C5, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(C6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(C7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(C8, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
 							.addGap(28)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblD, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_30, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_23, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_24, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_25, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_26, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_27, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_28, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_29, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
+								.addComponent(D1, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(D2, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(D3, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(D4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(D5, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(D6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(D7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(D8, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
 							.addGap(29)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblE, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_38, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_31, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_32, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_33, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_34, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_35, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_36, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_37, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
+								.addComponent(E1, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(E2, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(E3, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(E4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(E5, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(E6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(E7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(E8, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
 							.addGap(28)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-									.addComponent(toggleButton_46, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+									.addComponent(F1, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
 									.addComponent(lblF, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-								.addComponent(toggleButton_39, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_40, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_41, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_42, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_43, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_44, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-								.addComponent(toggleButton_45, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
+								.addComponent(F2, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(F3, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(F4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(F5, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(F6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(F7, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+								.addComponent(F8, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
 							.addGap(27)
 							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
